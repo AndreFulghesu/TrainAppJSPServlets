@@ -56,7 +56,10 @@
 				<td>${user.getPhone()}</td>
 				<td>${user.getBirthPlace()}</td>
 				<td>${user.getUserRole().getName()}</td>
-				<td> <button><a href="modify-user?id=${user.getIdUser()}">Modify User</a></button> 
+				<td> <button>
+						<a href="modify-user?id=<c:out value='${user.getIdUser()}' />" >Modify User</a>
+					</button> 
+				</td>
 			</tr>
 		</c:forEach>
 	</table>

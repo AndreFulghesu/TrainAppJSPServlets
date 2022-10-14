@@ -1,6 +1,8 @@
 package it.andrea.trainApp.util;
 
-public interface Constants {
+public class Constants {
+	
+	private Constants() {}
 	
 	public static final String BASIC_INSERT_USER = "INSERT INTO APP_USER(USER_NAME,USER_PASSWORD,EMAIL,ADDRESS,BIRTH_PLACE,USER_ROLE,PHONE)"
 			+ "VALUES(?,?,?,?,?,?,?)";
@@ -14,12 +16,16 @@ public interface Constants {
 	public static final String UPDATE_USER = "UPDATE APP_USER SET "
 			+ "USER_NAME = ?,USER_PASSWORD = ?,EMAIL = ?,ADDRESS = ?,BIRTH_PLACE = ?,USER_ROLE = ?,PHONE = ?";
 	
+	public static final String GET_USER_BY_ID = "SELECT * FROM APP_USER WHERE USER_ID = ?";
 	/*
 	 ** generics messages
 	 */
 	public static final String DB_ERROR = "Si è verificato un errore durante la connessione al database";
+	public static final String FATAL_ERROR = "Si è verificato un errore fatale, per favore torna indietro e riprova";
+	public static final String GENERIC_ERROR = "Si è verificato un errore, riprova";
 	public static final String STATUS = "STATUS";
 	public static final String LOGGED_USER = "LOGGED_USER";
+	public static final String SEARCHED_USER = "SEARCHED_USER";
 	public static final String REGISTRATION_MANDATORY = "I campi sono tutti obbligatori!";
 	public static final String REGISTRATION_SUCCESS = "La registrazione è avvenuta con successo";
 	public static final String REGISTRATION_FAILED = "Si è verificato un errore durante la registrazione";

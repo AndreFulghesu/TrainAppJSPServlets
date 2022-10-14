@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ page isErrorPage="true" %>  
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page import="it.andrea.trainApp.util.Constants" %> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,19 +10,8 @@
 <title>Error | TrainApp</title>
 </head>
 <body>
-<%
-    String errorMessage = "";
-    if(session.getAttribute("ERROR")!= null){
-        errorMessage = (String)session.getAttribute("ERROR");
-    }
-%>
-
-<% if(!errorMessage.isEmpty()) { %>
-        <div>
-            <h1> <%= errorMessage %> </h1>
-        </div>
-        
-        <% }%>
+	<h2>Sorry an exception occured!</h2> 
+	<h3><c:out value="${Constants.FATAL_ERROR}" /></h3>
 
 </body>
 </html>

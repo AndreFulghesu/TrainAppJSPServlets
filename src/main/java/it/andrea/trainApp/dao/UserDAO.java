@@ -62,4 +62,26 @@ public class UserDAO {
 		}	
 	}
 
+	public static AppUser getUserById(String idUser) throws ClassNotFoundException, SQLException {
+		
+		DBConnection dbConnection = DBConnection.getInstance();
+
+		Class.forName(dbConnection.getJdbcDriver());
+		
+		try (Connection con = DriverManager.getConnection(dbConnection.getJdbcConnection(), dbConnection.getUser(),
+				dbConnection.getPassword());
+				PreparedStatement statement = con.prepareStatement(Constants.GET_USER_BY_ID);) {
+			
+			statement.setLong(1, Long.valueOf(idUser));
+			
+			ResultSet rs = statement.executeQuery();
+
+			if (rs.next()) {
+				return AppUser.buildUser(rs);
+			}
+		}
+		
+		return null;
+	}
+
 }
