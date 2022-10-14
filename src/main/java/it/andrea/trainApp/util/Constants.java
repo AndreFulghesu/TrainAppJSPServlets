@@ -9,7 +9,10 @@ public interface Constants {
 	
 	public static final String GET_ALL_USERS = "SELECT * FROM APP_USER";
 	
+	public static final String DELETE_USER ="DELETE FROM APP_USER WHERE ID_USER = ?";
 	
+	public static final String UPDATE_USER = "UPDATE APP_USER SET "
+			+ "USER_NAME = ?,USER_PASSWORD = ?,EMAIL = ?,ADDRESS = ?,BIRTH_PLACE = ?,USER_ROLE = ?,PHONE = ?";
 	
 	/*
 	 ** generics messages

@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import it.andrea.trainApp.dao.DBConnection;
 import it.andrea.trainApp.models.AppUser;
 import it.andrea.trainApp.models.USER_ROLE;
 import it.andrea.trainApp.util.Constants;
-import it.andrea.trainApp.util.DBConnection;
 
 
 @WebServlet(name = "Homepage", urlPatterns = {"/homepage"})

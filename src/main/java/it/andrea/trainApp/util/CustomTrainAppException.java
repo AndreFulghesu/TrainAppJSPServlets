@@ -4,7 +4,7 @@ public class CustomTrainAppException extends RuntimeException {
 	
 	private static final long serialVersionUID = 1L;
 
-	CustomTrainAppException(String message) {
+	public CustomTrainAppException(String message) {
 		super(message);
 	}
 

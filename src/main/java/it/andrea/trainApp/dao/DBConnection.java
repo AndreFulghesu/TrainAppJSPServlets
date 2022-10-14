@@ -1,7 +1,10 @@
-package it.andrea.trainApp.util;
+package it.andrea.trainApp.dao;
 
 import java.io.IOException;
 import java.util.Properties;
+
+import it.andrea.trainApp.util.Constants;
+import it.andrea.trainApp.util.CustomTrainAppException;
 
 public class DBConnection {
 	

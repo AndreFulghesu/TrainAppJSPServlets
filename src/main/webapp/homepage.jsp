@@ -46,6 +46,7 @@
 			<th>Phone</th>
 			<th>Birth Place</th>
 			<th>User Role</th>
+			<th>Azioni</th>
 		</tr>
 		<c:forEach items="${ALL_USERS}" var="user">
 			<tr>
@@ -55,6 +56,7 @@
 				<td>${user.getPhone()}</td>
 				<td>${user.getBirthPlace()}</td>
 				<td>${user.getUserRole().getName()}</td>
+				<td> <button><a href="modify-user?id=${user.getIdUser()}">Modify User</a></button> 
 			</tr>
 		</c:forEach>
 	</table>

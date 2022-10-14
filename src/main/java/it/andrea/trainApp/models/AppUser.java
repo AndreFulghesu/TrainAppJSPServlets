@@ -6,6 +6,7 @@ import java.sql.SQLException;
 
 public class AppUser {
 	
+	private long userId;
 	private String username;
 	private String password;
 	private String email;
@@ -17,6 +18,7 @@ public class AppUser {
 	public static AppUser buildUser(ResultSet dbResultUser) throws SQLException {
 		
 		return new AppUser(
+				dbResultUser.getLong("USER_ID"),
 				dbResultUser.getString("USER_NAME"),
 				dbResultUser.getString("USER_PASSWORD"),
 				dbResultUser.getString("EMAIL"),
@@ -30,9 +32,10 @@ public class AppUser {
 	}
 	
 	
-	public AppUser(String username, String password, String email, String address, String birthPlace,
+	public AppUser(long idUser, String username, String password, String email, String address, String birthPlace,
 			USER_ROLE userRole, String phone) {
-
+		
+		this.setIdUser(idUser);
 		this.username = username;
 		this.password = password;
 		this.email = email;
@@ -41,6 +44,21 @@ public class AppUser {
 		this.userRole = userRole;
 		this.phone = phone;
 	}
+	
+	
+
+	public AppUser(String username, String password, String email, String address, String birthPlace,
+			USER_ROLE userRole, String phone) {
+		
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.address = address;
+		this.birthPlace = birthPlace;
+		this.userRole = userRole;
+		this.phone = phone;
+	}
+
 
 	public String getUsername() {
 		return username;
@@ -84,7 +102,14 @@ public class AppUser {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	
-	
 
+	public long getIdUser() {
+		return userId;
+	}
+
+
+	public void setIdUser(long idUser) {
+		this.userId = idUser;
+	}
+	
 }
